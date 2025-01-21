@@ -76,16 +76,16 @@ def mk_config(cfg_file):
                     _path = conf[section]["FILES_PATH"] = f"{_path}/"
                 CONF["FILES"] = {
                     "PATH": conf.get(section, "FILES_PATH", fallback="./data/"),
-                    "SUBS": conf.get(section, "SUBSCRIBER_FILE", fallback="local_subscriber_ids.csv"),
+                    "SUBS": conf.get(section, "SUBSCRIBER_FILE", fallback="subscriber_ids.csv"),
                     "PEER": conf.get(section, "PEER_FILE", fallback="rptrs.json"),
-                    "TGID": conf.get(section, "TGID_FILE", fallback="UKtalkgroup_ids.json"),
+                    "TGID": conf.get(section, "TGID_FILE", fallback="talkgroup_ids.json"),
                     "LCL_SUBS": conf.get(section, "LOCAL_SUB_FILE"),
                     "LCL_PEER": conf.get(section, "LOCAL_PEER_FILE"),
                     "LCL_TGID": conf.get(section, "LOCAL_TGID_FILE"),
                     "RELOAD_TIME": conf.getint(section, "RELOAD_TIME", fallback=7) * 864000,
                     "PEER_URL": conf.get(section, "PEER_URL", fallback="http://freedmr.cymru/talkgroups/rptrs.json"),
-                    "SUBS_URL": conf.get(section, "SUBSCRIBER_URL", fallback="http://freedmr.cymru/talkgroups/local_subscriber_ids.csv"),
-                    "TGID_URL": conf.get(section, "TGID_URL", fallback="http://downloads.freedmr.uk/downloads/UKtalkgroup_ids.json")
+                    "SUBS_URL": conf.get(section, "SUBSCRIBER_URL", fallback="https://raw.githubusercontent.com/446Digital/FreeDMR-Server/refs/heads/main/data/subscriber_ids.csv"),
+                    "TGID_URL": conf.get(section, "TGID_URL", fallback="https://raw.githubusercontent.com/446Digital/FreeDMR-Server/refs/heads/main/data/talkgroup_ids.json")
                     }
             elif section == "LOGGER":
                 CONF["LOG"] = {
